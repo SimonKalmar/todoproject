@@ -1,8 +1,68 @@
 body {
-  padding: 50px;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.registerback {
+  height: 100vh;
+  width: 100vw;
+  background: url(../images/flower.jpg);
+  background-size: cover;
+}
+
+.loginpage {
+  background-color: #ddd;
+  width: 350px;
+  height: 450px;
+  position: absolute;
+  left: 50%;
+  margin-left: -175px;
+  top: 50%;
+  margin-top: -225px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.loginpage h1 {
+  text-align: left;
+  width: 250px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.loginregister {
+  align-self: center;
+  width: 250px;
+}
+
+.loginregister span {
+  font-weight: 700;
+}
+
+.loginregister input {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 0;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.loginregister .submit {
+  width: auto;
+  padding: 10px 20px;
+  border: 0;
+  background: #fff;
+  margin-bottom: 0;
+}
+
+.loginregister .submit:hover {
+  background: #eee;
+  cursor: pointer;
 }

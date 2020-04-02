@@ -1,13 +1,17 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const bodyParser = require("body-parser");              // added for POST data handling
+const session = require('express-session');             // added for state
+const favicon = require('serve-favicon');               // favicon extra
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');          // router for basic routing file
+const usersRouter = require('./routes/users');          // router concerned with users routing file
 
-var app = express();
+const app = express();
+app.locals.pretty = app.get('env') === 'development';   // pretty print html
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,9 +22,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.svg')));// favicon extra
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use(session({secret: 'aaahhhhh', resave: true, saveUninitialized: true}));  // setup session
+app.use(bodyParser.urlencoded({ extended: false }));    // added POST data handling
+app.use(bodyParser.json());                             // added POST data handling
+app.use('/index', indexRouter);                              // urls pointing router index.js
+app.use('/', usersRouter);                         // urls for users.js
+
+if (app.get('env') === 'development') {                 // added pretty prints html while testing
+  app.locals.pretty = true;
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
