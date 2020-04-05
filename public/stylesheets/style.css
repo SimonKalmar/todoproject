@@ -1,21 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Raleway', sans-serif;
+  background: #333;
+  background: url(../images/flower.jpg);
+  background-size: cover;
+  color: #c4bc90;
 }
 
-a {
-  color: #00B7FF;
+h1 {
+  font-size: 55px;
+  margin: 0;
+  text-transform: uppercase;
+  color: #c4bc90;
+  margin-left: 100px;
+  margin-top: 50px;
+  padding: 0;
+  text-shadow: 2px 2px 2px #333;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  background: #111;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 500px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu li {
+  text-decoration: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #c4bc90;
+  font-weight: 700;
+  font-size: 14px;
+  display: block;
+  padding: 15px;
+  width: 75px;
+  text-align: center;
+}
+
+.menu a:hover {
+  cursor: pointer;
+  color: #00888a;
+  transition: 0.5s;
+}
+
+.view {
+  position: relative;
+}
+
+.newtodo {
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  text-decoration: none;
+  color: #c4bc90;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  background: #222;
+  font-weight: 700;
+  box-shadow: 7px 7px 5px #222;
+  border: 1px solid #111;
+}
+
+.newtodo:hover {
+  cursor: pointer;
+  box-shadow: 4px 4px 5px #222;
+  transition: 0.5s;
+  color: #00888a;
+}
+
+.button {
+  margin-left: 100px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #c4bc90;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  background: #222;
+  font-weight: 700;
+  box-shadow: 7px 7px 5px #222;
+  border: 1px solid #111;
+}
+
+.button:hover {
+  cursor: pointer;
+  box-shadow: 4px 4px 5px #222;
+  transition: 0.5s;
+  color: #00888a;
+}
+
+.showouter:first-of-type {
+  margin-top: 30px;
+}
+
+.showouter {
+  background: #222;
+  padding: 20px;
+  width: 700px;
+  margin-left: 70px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  box-shadow: 7px 7px 5px #222;
+  border: 1px solid #111;
+}
+
+.showinner {
+  padding: 10px;
+  background: ;
+  position: relative;
+}
+
+.showinner h2 {
+  font-size: 40px;
+  margin: 0;
+  text-transform: uppercase;
+  color: #eee;
+}
+
+.showinner h4 {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.showinner a {
+  text-decoration: none;
+  color: #c4bc90;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16px;
+}
+
+.showinner a:hover {
+  cursor: pointer;
+  color: #00888a;
+  transition: 0.5s;
+}
+
+.showinner p {
+  margin: 0;
+  font-size: 16px;
+  color: #eee;
 }
 
 .registerback {
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
   background: url(../images/flower.jpg);
   background-size: cover;
 }
 
 .loginpage {
-  background-color: #ddd;
+  background-color: #333;
   width: 350px;
   height: 450px;
   position: absolute;

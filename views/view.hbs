@@ -1,0 +1,50 @@
+{{#if success}}
+<section>
+  <h1>{{title}}</h1>
+  <a href="/view" class="button">Return</a>
+</section>
+
+{{else}}
+<section class="view">
+  <a href="/addtodo" class="newtodo">Add new Todo</a>
+  <h1>The Todo List</h1>
+{{#if nothing}}
+  <div class="">
+    <div class="showouter">
+      <div class="showinner">
+        <h2>Add new todos</h2>
+        <p>It looks like your account is empty! You better add your todos to the your account, so you know what to do!</p>
+        <h4>What to do?</h4>
+        <p>Click the button on the upper right side to add a new todo!</p>
+        <h4>Can I edit my todo?</h4>
+        <p>Yes! You can definitely edit things! Whenever you get your todos in, then there will be a way to edit them!</p>
+      </div>
+    </div>
+  </div>
+{{else}}
+  {{#each stuff}}
+  <div class="showouter">
+    <div class="showinner">
+      <h2>{{title}}</h2>
+      <h4>What is on my list?</h4>
+      <p>{{todo}}</p>
+      <hr />
+      <h4>Is it a priority?</h4>
+      <p>{{priority}}</p>
+      <hr />
+      <div class="time">
+        <h4>Active Period from</h4>
+        <p>{{startDate}}</p>
+        <hr/>
+        <h4>Active Period to</h4>
+        <p>{{endDate}}</p>
+        <hr/>
+      </div>
+      <a href="/edit/{{random}}">Edit</a>
+    </div>
+  </div>
+  {{/each}}
+{{/if}}
+
+</section>
+{{/if}}

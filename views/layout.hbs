@@ -3,8 +3,23 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" type="image/png" href="favicon.svg">
   </head>
   <body>
+    <nav class="menu">
+      {{#if authenticated}}
+        <ul>
+          <li class="name"> {{names}} </li>
+          <li> <a href="/logout">Logout</a> </li>
+
+        </ul>
+      {{else}}
+          <ul>
+            <li> <a href="/login">Login</a> </li>
+            <li> <a href="/register">Register</a> </li>
+          </ul>
+      {{/if}}
+    </nav>
     {{{body}}}
   </body>
 </html>
